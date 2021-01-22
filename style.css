@@ -7,8 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red; 
-     }
+    /* border: 1px solid red;  */
+ }
 
 body{     
     font-family: 'Open Sans', sans-serif;
@@ -30,15 +30,16 @@ body.dark{
 }
 .header-logo {
     width: 200px;
+    height: 35px;
 }
 .header-logo img{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
  body.dark .header-logo img{
     content: url("images/logo-dark.svg");
 } 
-.header-boton{
+/* .header-boton{
     background-color: #fff;
     width: 120px;
     height:35px;
@@ -53,19 +54,16 @@ body.dark .header-boton,
 body.dark .header-boton a{
     background-color: var(--Pink);
     color: #fff;
-}
+} */
 
-/* --------------------------boton --------------------------*/
+/* --------------------------boton modo nocturno --------------------------*/
 .header-switch{
     background:var(--text);
     border-radius: 1000px;
     border: none;
-    position: absolute;
     cursor: pointer;
     outline: none;
-    bottom: -30px;
-    right: 60px;
-    /* display: flex; */
+    position: relative;
 }
 .header-switch::after{
     content: " ";
@@ -83,7 +81,6 @@ body.dark .header-boton a{
 }
 .header-switch.active{
     background: rgb(243, 194, 103);
-    right: 60px;
     left: unset;
 }
 .header-switch.active::after{
@@ -452,11 +449,27 @@ body.dark .footer{
         padding: 0 25px;
     }
     .header-switch{
-        right: 25px;
+        background:var(--text);
+        border-radius: 1000px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        position: relative;
     }
-    .header-switch.active{
-        right: 25px;
+    .header-switch::after{
+
+        width: 25px;
+        height: 25px;
     }
+
+    .header-switch i{
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 15px;
+        color: #fff;
+    }
+
     .numbers{
         flex-direction: column;
         align-items: center;
@@ -508,10 +521,7 @@ body.dark .footer{
 
 @media screen and (max-width: 400px){
     .header-logo{
-        width: 140px;
-    }
-    .header-boton{
-        width: 100px;
+        width: 170px;
         height: 30px;
     }
     .hero-info_title,
